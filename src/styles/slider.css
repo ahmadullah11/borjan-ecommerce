@@ -1,0 +1,30 @@
+/* Small black arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: black; /* arrow color */
+  font-size: 18px; /* make arrow smaller */
+  font-weight: bold;
+}
+
+/* remove background circle */
+.swiper-button-next,
+.swiper-button-prev {
+  background: none;
+  border: none;
+}
+
+/* Position closer to edges */
+.swiper-button-prev {
+  left: 15px;
+}
+
+.swiper-button-next {
+  right: 15px;
+}
+
+/* Customize arrow shape */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px; /* size of arrow */
+  font-weight: bold;
+}

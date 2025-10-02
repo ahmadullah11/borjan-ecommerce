@@ -1,0 +1,9 @@
+/* ✅ Swiper CSS imports must be at the top */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+/* ✅ Tailwind directives below */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
