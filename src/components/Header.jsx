@@ -32,7 +32,7 @@ export default function Header() {
               <FaChevronDown className="group-hover:hidden inline" />
               <FaChevronUp className="hidden group-hover:inline" />
             </NavLink>
-            <div className="absolute z-[999] left-0 mt-2 w-48 bg-white shadow-lg hidden group-hover:block">
+            <div className="absolute z-[999] left-0  w-48 bg-white shadow-lg hidden group-hover:block">
               <ul className="p-2 space-y-1">
                 <li><NavLink to="/sale/men">Men</NavLink></li>
                 <li><NavLink to="/sale/kids">Kids</NavLink></li>
@@ -51,26 +51,26 @@ export default function Header() {
               <FaChevronDown className="group-hover:hidden" />
               <FaChevronUp className="hidden group-hover:inline" />
             </NavLink>
-            <div className="absolute z-[999] left-0 mt-2 w-48 bg-white shadow-lg hidden group-hover:block">
+            <div className="absolute z-[999] left-0  w-48 bg-white shadow-lg hidden group-hover:block">
               <ul className="p-2 space-y-1">
-                <li><NavLink to="/wedding25/women">WOMEN</NavLink></li>
-                <li><NavLink to="/wedding25/men">MEN</NavLink></li>
-                <li><NavLink to="/wedding25/clutches">CLUTCHES</NavLink></li>
+                <li><NavLink to="/women-wedding">WOMEN</NavLink></li>
+                <li><NavLink to="/men-wedding">MEN</NavLink></li>
+                <li><NavLink to="/clutches-wedding">CLUTCHES</NavLink></li>
               </ul>
             </div>
           </div>
 
           {/* NEW IN */}
           <div className="group relative">
-            <NavLink to="/new-in" className="flex items-center space-x-1">
+            <NavLink to="/new-in-women" className="flex items-center space-x-1">
               <span>NEW IN</span>
               <FaChevronDown className="group-hover:hidden" />
               <FaChevronUp className="hidden group-hover:inline" />
             </NavLink>
-            <div className="absolute z-[999] left-0 mt-2 w-48 bg-white shadow-lg hidden group-hover:block">
+            <div className="absolute z-[999] left-0  w-48 bg-white shadow-lg hidden group-hover:block">
               <ul className="p-2 space-y-1">
-                <li><NavLink to="/new-in/women">Women</NavLink></li>
-                <li><NavLink to="/new-in/men">Men</NavLink></li>
+                <li><NavLink to="/new-in-women">Women</NavLink></li>
+                <li><NavLink to="/new-in-men">Men</NavLink></li>
               </ul>
             </div>
           </div>
@@ -82,10 +82,10 @@ export default function Header() {
               <FaChevronDown className="group-hover:hidden" />
               <FaChevronUp className="hidden group-hover:inline" />
             </NavLink>
-            <div className="absolute z-[999] left-0 mt-2 w-56 bg-white shadow-lg hidden group-hover:block">
+            <div className="absolute z-[999] left-0  w-56 bg-white shadow-lg hidden group-hover:block">
               <ul className="p-2 space-y-1">
-                <li><NavLink to="/women/slippers">Slippers</NavLink></li>
-                <li><NavLink to="/women/sandals">Sandals</NavLink></li>
+                <li><NavLink to="/slipperwomen">Slippers</NavLink></li>
+                <li><NavLink to="/sandalswomen">Sandals</NavLink></li>
                 <li><NavLink to="/women/heels">Heels</NavLink></li>
                 <li><NavLink to="/women/chappals">Chappals</NavLink></li>
                 <li><NavLink to="/women/khussa">Khussa</NavLink></li>
@@ -102,7 +102,7 @@ export default function Header() {
                   <NavLink to="/women/accessories" className="flex justify-between items-center">
                     Accessories <span>▶</span>
                   </NavLink>
-                  <div className="absolute z-[999] left-full top-0 mt-0 w-48 bg-white shadow-lg hidden group-hover:block">
+                  <div className="absolute z-[999] left-full top-0  w-48 bg-white shadow-lg hidden group-hover:block">
                     <ul className="p-2 space-y-1">
                       <li><NavLink to="/women/accessories/fragrances">Fragrances</NavLink></li>
                       <li><NavLink to="/women/accessories/nail-paints">Nail Paints</NavLink></li>
@@ -124,7 +124,7 @@ export default function Header() {
               <FaChevronDown className="group-hover:hidden" />
               <FaChevronUp className="hidden group-hover:inline" />
             </NavLink>
-            <div className="absolute z-[999] left-0 mt-2 w-56 bg-white shadow-lg hidden group-hover:block">
+            <div className="absolute z-[999] left-0  w-56 bg-white shadow-lg hidden group-hover:block">
               <ul className="p-2 space-y-1">
                 <li><NavLink to="/men/peshawaris">Peshawaris</NavLink></li>
                 <li><NavLink to="/men/sandals">Sandals</NavLink></li>
@@ -163,7 +163,7 @@ export default function Header() {
               <FaChevronDown className="group-hover:hidden" />
               <FaChevronUp className="hidden group-hover:inline" />
             </NavLink>
-            <div className="absolute z-[999] left-0 mt-2 w-56 bg-white shadow-lg hidden group-hover:block">
+            <div className="absolute z-[999] left-0  w-56 bg-white shadow-lg hidden group-hover:block">
               <ul className="p-2 space-y-1">
                 <li><NavLink to="/kids/new">New in</NavLink></li>
                 <li>
@@ -194,7 +194,7 @@ export default function Header() {
               <FaChevronDown className="group-hover:hidden" />
               <FaChevronUp className="hidden group-hover:inline" />
             </NavLink>
-            <div className="absolute z-[999] left-0 mt-2 w-56 bg-white shadow-lg hidden group-hover:block">
+            <div className="absolute z-[999] left-0  w-56 bg-white shadow-lg hidden group-hover:block">
               <ul className="p-2 space-y-1">
                 <li><NavLink to="/bags/new">New in</NavLink></li>
                 <li><NavLink to="/bags/shoulder">Shoulder Bags</NavLink></li>
@@ -215,7 +215,7 @@ export default function Header() {
               <FaChevronDown className="group-hover:hidden" />
               <FaChevronUp className="hidden group-hover:inline" />
             </NavLink>
-            <div className="absolute z-[999] left-0 mt-2 w-40 bg-white shadow-lg hidden group-hover:block">
+            <div className="absolute z-[999] left-0  w-40 bg-white shadow-lg hidden group-hover:block">
               <ul className="p-2 space-y-1">
                 <li><NavLink to="/fragrances/women">Women</NavLink></li>
                 <li><NavLink to="/fragrances/men">Men</NavLink></li>
@@ -230,7 +230,7 @@ export default function Header() {
               <FaChevronDown className="group-hover:hidden" />
               <FaChevronUp className="hidden group-hover:inline" />
             </NavLink>
-            <div className="absolute z-[999] left-0 mt-2 w-48 bg-white shadow-lg hidden group-hover:block">
+            <div className="absolute z-[999] left-0  w-48 bg-white shadow-lg hidden group-hover:block">
               <ul className="p-2 space-y-1">
                 <li><NavLink to="/best-seller/women">Women</NavLink></li>
                 <li><NavLink to="/best-seller/men">Men</NavLink></li>
