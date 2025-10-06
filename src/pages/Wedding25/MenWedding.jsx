@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom"; // 👈 Added for navigation
 import { ShoppingCart, ChevronDown, X } from "lucide-react";
 import { IoColorFilterOutline } from "react-icons/io5";
 
@@ -15,13 +16,15 @@ const ProductCard = ({ product }) => {
         setIsQuickShopHovered(false);
       }}
     >
-      {/* Product Image */}
+      {/* Product Image - now wrapped in Link */}
       <div className="relative">
-        <img
-          src={isHovered ? product.hoverImage?.trim() : product.image?.trim()}
-          alt={product.name}
-          className="w-full h-[200px] sm:h-[350px] object-cover transition-all duration-500"
-        />
+        <Link to="/wedding25/MenWeddingProductDetail/MenWeddingProductDetail">
+          <img
+            src={isHovered ? product.hoverImage?.trim() : product.image?.trim()}
+            alt={product.name}
+            className="w-full h-[200px] sm:h-[350px] object-cover transition-all duration-500 cursor-pointer"
+          />
+        </Link>
 
         {/* Hover Overlay */}
         {isHovered && (
