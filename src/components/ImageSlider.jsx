@@ -1,9 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
+
+import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
+
 
 export default function ImageSlider() {
   return (
