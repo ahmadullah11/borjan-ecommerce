@@ -1,24 +1,17 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+
+  import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ShoppingCart, ChevronDown, X } from "lucide-react";
 import { IoColorFilterOutline } from "react-icons/io5";
-import QuickAddModel from "./QuickAddModel";
+import QuickAddModel from "./MenQuickAddModel";
 
+// ✅ Full Filter Component
 const Filter = ({ isFilterOpen, setIsFilterOpen }) => {
   const filterRef = useRef(null);
 
   const colors = [
-    "#f5d680",
-    "#000",
-    "#f0e6e0",
-    "#b5a642",
-    "#e6c84d",
-    "#e0d0d0",
-    "#f0c0e0",
-    "#e0e0e0",
-    "#e64d4d",
-    "#a0a0a0",
-    "#e680a0",
+    "#f5d680", "#000", "#f0e6e0", "#b5a642", "#e6c84d", "#e0d0d0",
+    "#f0c0e0", "#e0e0e0", "#e64d4d", "#a0a0a0", "#e680a0",
   ];
   const sizes = [36, 37, 38, 39, 40, 41, 42];
   const sizeCounts = { 36: 32, 37: 32, 38: 32, 39: 32, 40: 32, 41: 32, 42: 2 };
@@ -39,8 +32,7 @@ const Filter = ({ isFilterOpen, setIsFilterOpen }) => {
         setIsFilterOpen(false);
       }
     };
-    if (isFilterOpen)
-      document.addEventListener("mousedown", handleClickOutside);
+    if (isFilterOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isFilterOpen]);
 
@@ -119,10 +111,7 @@ const Filter = ({ isFilterOpen, setIsFilterOpen }) => {
         <div>
           <h4 className="font-semibold mb-2">Brand</h4>
           {brands.map((brand) => (
-            <label
-              key={brand.name}
-              className="flex items-center gap-2 text-sm"
-            >
+            <label key={brand.name} className="flex items-center gap-2 text-sm">
               <input type="checkbox" className="w-4 h-4" />
               <span>
                 {brand.name} ({brand.count})
@@ -135,10 +124,7 @@ const Filter = ({ isFilterOpen, setIsFilterOpen }) => {
         <div>
           <h4 className="font-semibold mb-2">Style</h4>
           {styles.map((style) => (
-            <label
-              key={style.name}
-              className="flex items-center gap-2 text-sm"
-            >
+            <label key={style.name} className="flex items-center gap-2 text-sm">
               <input type="checkbox" className="w-4 h-4" />
               <span>
                 {style.name} ({style.count})
@@ -151,10 +137,7 @@ const Filter = ({ isFilterOpen, setIsFilterOpen }) => {
         <div>
           <h4 className="font-semibold mb-2">Discount</h4>
           {discounts.map((discount) => (
-            <label
-              key={discount.name}
-              className="flex items-center gap-2 text-sm"
-            >
+            <label key={discount.name} className="flex items-center gap-2 text-sm">
               <input type="checkbox" className="w-4 h-4" />
               <span>
                 {discount.name} ({discount.count})
@@ -174,6 +157,7 @@ const Filter = ({ isFilterOpen, setIsFilterOpen }) => {
   );
 };
 
+// ✅ Product Card Component
 const ProductCard = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isQuickShopHovered, setIsQuickShopHovered] = useState(false);
@@ -226,9 +210,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className="p-4 bg-white text-center">
-          <h3 className="text-sm font-medium mb-2 hover:underline">
-            {product.name}
-          </h3>
+          <h3 className="text-sm font-medium mb-2 hover:underline">{product.name}</h3>
           <div className="text-gray-500 text-sm mb-2">
             Regular price PKR {product.originalPrice.toLocaleString()}
           </div>
@@ -245,96 +227,95 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
 
-      {showModal && (
-        <QuickAddModel product={product} onClose={() => setShowModal(false)} />
-      )}
+      {showModal && <QuickAddModel product={product} onClose={() => setShowModal(false)} />}
     </>
   );
 };
 
-const WomenWedding = () => {
+// ✅ Main MenWedding Component
+const MenWedding = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Featured");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const products = [
+  
+
+const products = [
     {
       id: 1,
-      name: "Women Slipper Heels-LIGHT BLUE",
+      name: "Men Formal Shoes-BLACK",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvkseKh79sZX2VBjTCZ9k2HD2q1mFkjdZiWA&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi6UkugrxSICS6s-KqlMDgxfoiivCv7J5fZw&s",
       hoverImage:
-        "https://ae01.alicdn.com/kf/S6f27778ee60640ff8120ab40091a0fa5V.jpg",
-      originalPrice: 3888,
-      sizes: [36, 37, 38, 39, 40, 41],
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4qOJ76Fbk6jDmeFqUdSsOjTrMExGobfbXjwLDA6KPp3tD5-0LHRrzd5jntXqOdJJUa8w&usqp=CAU",
+      originalPrice: 4500,
+      sizes: [40, 41, 42, 43, 44, 45],
     },
     {
       id: 2,
-      name: "Women Slipper Heels-GOLDEN",
+      name: "Men Casual Sneakers-WHITE",
       image:
-        "https://www.borjan.com.pk/cdn/shop/files/1_af359e79-f055-4d5b-814c-d0f85669e1d1.png?v=1757096655",
+        "https://img.joomcdn.net/63cac80ca22a7a44a15963c06857f3e7091c2e11_original.jpeg",
       hoverImage:
-        "https://www.borjan.com.pk/cdn/shop/files/4_af6d834a-66be-4d3f-bfa1-14cd84531ee9.png?v=1757096655&width=1445",
-      originalPrice: 4405,
-      sizes: [36, 37, 38, 39, 40, 41],
+        "https://i.ebayimg.com/images/g/03cAAOSwyOBguPwa/s-l1200.jpg",
+      originalPrice: 5200,
+      sizes: [40, 41, 42, 43, 44, 45],
     },
     {
       id: 3,
-      name: "Women Slipper Heels-KHAKI",
+      name: "Men Loafers-BROWN",
       image:
-        "https://www.borjan.com.pk/cdn/shop/files/B14006552-BLACK.png?v=1757097711",
+        "https://starlet.pk/cdn/shop/files/AB-410-4A-BRN-_3.jpg?v=1757007803&width=1500",
       hoverImage:
-        "https://www.borjan.com.pk/cdn/shop/files/4_2919059b-ffe6-4589-880b-007aad1061ed.png?v=1757097711&width=1445",
-      originalPrice: 4300,
-      sizes: [36, 37, 38, 39, 40, 41],
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfjabojB1m9hZMFk9BrDJilaL4ebib_SoC9EAW30OmVcLqDScrdfeFtUBoKgLLHkdaYUE&usqp=CAU",
+      originalPrice: 3800,
+      sizes: [40, 41, 42, 43, 44, 45],
     },
     {
       id: 4,
-      name: "Women Slipper Heels-TAN",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhefr8XHGUSBfN1xLyF9f701tOMMdXWPi9Fg&s",
+      name: "Men Sandals-TAN",
+      image: "https://m.media-amazon.com/images/I/61XOyfERqEL._UY1000_.jpg",
       hoverImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoYvYGiJkq7jMrgzKm7I6VgnRvnoXtFr9OZg&s",
-      originalPrice: 3800,
-      sizes: [36, 37, 38, 39, 40, 41],
+        "https://fausto.in/cdn/shop/products/FST_KI-4806_TAN_1-1_MOOD_400x.jpg?v=1743177740",
+      originalPrice: 2900,
+      sizes: [40, 41, 42, 43, 44, 45],
     },
     {
       id: 5,
-      name: "Women Slipper Heels-BEIGE",
+      name: "Men Slip On-BLUE",
       image:
-        "https://1ststep.pk/cdn/shop/files/seraphina_gold_heel_slippers_0412464_1_800x.webp?v=1726505569",
+        "https://d30fs77zq6vq2v.cloudfront.net/product/1080x1619/17082025/8502-blue-side-jpg-1_1709793439-146786511529.jpg",
       hoverImage:
-        "https://rukminim2.flixcart.com/image/480/640/xif0q/shopsy-sandal/r/l/6/6-akh-001-6-ak-sky-white-original-imah8rfrzbmb8dkc.jpeg?q=90",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROxmT1q6dt2v3iN_hpwy2EL0BWcISOyY2qi7S3KUmz8IyKr8HvyF4pKzQz_08qtTBGmf0&usqp=CAU",
       originalPrice: 3500,
       sizes: [36, 37, 38, 39, 40, 41],
     },
     {
       id: 6,
-      name: "Women Slipper Heels-BLACK",
+      name: "Men Slip On-BROWN",
       image:
-        "https://1ststep.pk/cdn/shop/files/black_fancy_heel_slippers_0413052_1_800x.webp?v=1747837400",
+        "https://img.kwcdn.com/product/1d65865b8c/e7dfa464-068d-400a-bc37-d83e8748df2e_800x800.jpeg",
       hoverImage:
-        "https://img4.dhresource.com/webp/m/f3/albu/jc/g/14/9fa48b15-bbba-4c65-81b6-3916dbb05dd0.jpg",
+        "https://i5.walmartimages.com/seo/Leesechin-Clearance-Oversized-Men-s-Shoes-Leather-Pea-Casual-Leather-Shoes-Driving-Lazy-Shoes_cdb05e0c-27a7-4979-a808-4cb63ca1d332.824e0152d16b71bee79205e8950bae82.jpeg",
       originalPrice: 4000,
       sizes: [36, 37, 38, 39, 40, 41],
     },
     {
       id: 7,
-      name: "Women Slipper Heels-PINK",
+      name: "Men Slip On-BROWN",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxGhcWGhD-ugsWBHGBLT4v42vtBd18xUeTVl5rThAfw4dPgYAwliaf7YB83dURhxA3LNQ&usqp=CAU",
+        "https://cdn.shopify.com/s/files/1/2216/4489/files/1156945.jpg?v=1758325996&width=800&height=800&crop=center",
       hoverImage:
-        "https://snfproducts.pk/wp-content/uploads/2024/09/WhatsApp-Image-2024-10-10-at-05.53.05-1.jpeg",
+        "https://s.alicdn.com/@sc04/kf/Af6d39f94ecab401bb493194f37741189K/Men-s-Leather-Shoes-2025-New-Business-Formal-Casual-Leather-Shoes-Men-s-Leather-Shoes.jpg_300x300.jpg",
       originalPrice: 4200,
       sizes: [36, 37, 38, 39, 40, 41],
     },
     {
       id: 8,
-      name: "Women Slipper Heels-WHITE",
+      name: "Men Slip On-BLACK",
       image:
-        "https://n.nordstrommedia.com/it/8de0f791-9861-4f67-bc07-ac1a6ad33ee5.jpeg?h=368&w=240&dpr=2",
-      hoverImage:
-        "https://snfproducts.pk/wp-content/uploads/2023/07/WhatsApp-Image-2023-08-07-at-4.23.30-PM-1.jpeg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHJJu_04bqW3k-mmCjfWR-BsRLP4aJzSvo7jgtc_k6W1V0WCGP0I_fI6mX4gziVAqzelI&usqp=CAU",
+      hoverImage: "https://m.media-amazon.com/images/I/51Tj5l+3xjL._UY300_.jpg",
       originalPrice: 4500,
       sizes: [36, 37, 38, 39, 40, 41],
     },
@@ -345,10 +326,11 @@ const WomenWedding = () => {
       <div className="pt-12 px-2 sm:px-3">
         <div className="text-center mb-6">
           <h2 className="text-sm sm:text-3xl lg:text-4xl font-normal mb-6">
-            Women Wedding
+            Men Wedding
           </h2>
         </div>
 
+        {/* Header: Filter + Dropdown */}
         <div className="flex justify-between items-center px-2 sm:px-3 py-4 border-b mb-6 relative">
           <button
             onClick={() => setIsFilterOpen(true)}
@@ -369,27 +351,27 @@ const WomenWedding = () => {
 
             {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-20">
-                {["Featured", "Best selling", "Price, low to high"].map(
-                  (option) => (
-                    <div
-                      key={option}
-                      onClick={() => {
-                        setSelectedOption(option);
-                        setDropdownOpen(false);
-                      }}
-                      className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
-                    >
-                      {option}
-                    </div>
-                  )
-                )}
+                {["Featured", "Best selling", "Price, low to high"].map((option) => (
+                  <div
+                    key={option}
+                    onClick={() => {
+                      setSelectedOption(option);
+                      setDropdownOpen(false);
+                    }}
+                    className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                  >
+                    {option}
+                  </div>
+                ))}
               </div>
             )}
           </div>
         </div>
 
+        {/* Filter Overlay */}
         <Filter isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen} />
 
+        {/* Product Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pb-12">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -400,4 +382,4 @@ const WomenWedding = () => {
   );
 };
 
-export default WomenWedding;
+export default MenWedding;

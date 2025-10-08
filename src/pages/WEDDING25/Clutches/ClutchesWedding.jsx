@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ShoppingCart, ChevronDown, X } from "lucide-react";
 import { IoColorFilterOutline } from "react-icons/io5";
-import QuickAddModel from "./QuickAddModel";
+import QuickAddModel from "./ClutchesQuickAddModel";
 
+// ✅ Filter Component
 const Filter = ({ isFilterOpen, setIsFilterOpen }) => {
   const filterRef = useRef(null);
 
@@ -39,8 +40,7 @@ const Filter = ({ isFilterOpen, setIsFilterOpen }) => {
         setIsFilterOpen(false);
       }
     };
-    if (isFilterOpen)
-      document.addEventListener("mousedown", handleClickOutside);
+    if (isFilterOpen) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isFilterOpen]);
 
@@ -174,6 +174,7 @@ const Filter = ({ isFilterOpen, setIsFilterOpen }) => {
   );
 };
 
+// ✅ Product Card Component
 const ProductCard = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isQuickShopHovered, setIsQuickShopHovered] = useState(false);
@@ -252,7 +253,8 @@ const ProductCard = ({ product }) => {
   );
 };
 
-const WomenWedding = () => {
+// ✅ Main Page Component
+const ClutchesWedding = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Featured");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -260,83 +262,82 @@ const WomenWedding = () => {
   const products = [
     {
       id: 1,
-      name: "Women Slipper Heels-LIGHT BLUE",
+      name: "Women Clutch-SILVER",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvkseKh79sZX2VBjTCZ9k2HD2q1mFkjdZiWA&s",
+        "https://dynamic.zacdn.com/o-YJueUeuGxjRfiZQzg1xYCYw40=/filters:quality(70):format(webp)/https://static-sg.zacdn.com/p/lusuromod-0700-1382783-3.jpg",
       hoverImage:
-        "https://ae01.alicdn.com/kf/S6f27778ee60640ff8120ab40091a0fa5V.jpg",
-      originalPrice: 3888,
-      sizes: [36, 37, 38, 39, 40, 41],
+        "https://m.media-amazon.com/images/I/71u+jv0krXL._UY900_.jpg",
+      originalPrice: 4500,
+      sizes: [1],
     },
     {
       id: 2,
-      name: "Women Slipper Heels-GOLDEN",
+      name: "Women Clutch-GOLDEN",
       image:
-        "https://www.borjan.com.pk/cdn/shop/files/1_af359e79-f055-4d5b-814c-d0f85669e1d1.png?v=1757096655",
+        "https://www.sojoee.com/wp-content/uploads/2024/03/BG-1450a-gold-womens-purse.jpg",
       hoverImage:
-        "https://www.borjan.com.pk/cdn/shop/files/4_af6d834a-66be-4d3f-bfa1-14cd84531ee9.png?v=1757096655&width=1445",
-      originalPrice: 4405,
-      sizes: [36, 37, 38, 39, 40, 41],
+        "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/449971fff3f1a2c34ebdcd4ec0a49e47.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp",
+      originalPrice: 5200,
+      sizes: [1],
     },
     {
       id: 3,
-      name: "Women Slipper Heels-KHAKI",
+      name: "Women Clutch-GOLDEN",
       image:
-        "https://www.borjan.com.pk/cdn/shop/files/B14006552-BLACK.png?v=1757097711",
+        "https://i.pinimg.com/736x/2d/63/57/2d63570dc59a5bb1953b1fd0c704414d.jpg",
       hoverImage:
-        "https://www.borjan.com.pk/cdn/shop/files/4_2919059b-ffe6-4589-880b-007aad1061ed.png?v=1757097711&width=1445",
-      originalPrice: 4300,
-      sizes: [36, 37, 38, 39, 40, 41],
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcWDsTeh7e3BZl-DkiPxkePqAm42dWbsRrDXqHcHKOlgw3qKh6Hk4l9coEVQ19kqwyVb0&usqp=CAU",
+      originalPrice: 3800,
+      sizes: [1],
     },
     {
       id: 4,
-      name: "Women Slipper Heels-TAN",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhefr8XHGUSBfN1xLyF9f701tOMMdXWPi9Fg&s",
+      name: "Women Clutch-GOLDEN",
+      image: "https://m.media-amazon.com/images/I/813xxbPxI6L._UY1000_.jpg",
       hoverImage:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoYvYGiJkq7jMrgzKm7I6VgnRvnoXtFr9OZg&s",
-      originalPrice: 3800,
-      sizes: [36, 37, 38, 39, 40, 41],
+        "https://ae01.alicdn.com/kf/H66ee02925f094aaf92cec0e713666a57A.jpg",
+      originalPrice: 2900,
+      sizes: [1],
     },
     {
       id: 5,
-      name: "Women Slipper Heels-BEIGE",
+      name: "Women Clutch-GOLDEN",
       image:
-        "https://1ststep.pk/cdn/shop/files/seraphina_gold_heel_slippers_0412464_1_800x.webp?v=1726505569",
+        "https://stylo.pk/cdn/shop/files/P2425815_2_3d79cf94-8456-41d0-8a76-0196ea1ac347.jpg?v=1756923159&width=1080",
       hoverImage:
-        "https://rukminim2.flixcart.com/image/480/640/xif0q/shopsy-sandal/r/l/6/6-akh-001-6-ak-sky-white-original-imah8rfrzbmb8dkc.jpeg?q=90",
+        "https://stylo.pk/cdn/shop/files/P2438515_2_6fa02ccf-bc83-4bc4-8c5c-23523f29db76.jpg?v=1757336351&width=1080",
       originalPrice: 3500,
-      sizes: [36, 37, 38, 39, 40, 41],
+      sizes: [1],
     },
     {
       id: 6,
-      name: "Women Slipper Heels-BLACK",
+      name: "Women Clutch-GOLDEN",
       image:
-        "https://1ststep.pk/cdn/shop/files/black_fancy_heel_slippers_0413052_1_800x.webp?v=1747837400",
+        "https://ae01.alicdn.com/kf/S902c81548576473588a67af308da1e14C.jpg",
       hoverImage:
-        "https://img4.dhresource.com/webp/m/f3/albu/jc/g/14/9fa48b15-bbba-4c65-81b6-3916dbb05dd0.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7-vw2hqQs04l6VUCbgUXmA662gPgLymN4ikWH6Ap2PoPxA-Vk1nSgz4Mv-rDwsK7a35c&usqp=CAU",
       originalPrice: 4000,
-      sizes: [36, 37, 38, 39, 40, 41],
+      sizes: [1],
     },
     {
       id: 7,
-      name: "Women Slipper Heels-PINK",
+      name: "Women Clutch-GOLDEN",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxGhcWGhD-ugsWBHGBLT4v42vtBd18xUeTVl5rThAfw4dPgYAwliaf7YB83dURhxA3LNQ&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXSAsk7To2gAmiol9PSiNb-5rthFCb0Uqhow&s",
       hoverImage:
-        "https://snfproducts.pk/wp-content/uploads/2024/09/WhatsApp-Image-2024-10-10-at-05.53.05-1.jpeg",
+        "https://m.media-amazon.com/images/I/91lDQHbmJEL._UY900_.jpg",
       originalPrice: 4200,
-      sizes: [36, 37, 38, 39, 40, 41],
+      sizes: [1],
     },
     {
       id: 8,
-      name: "Women Slipper Heels-WHITE",
+      name: "Women Clutch-GOLDEN",
       image:
-        "https://n.nordstrommedia.com/it/8de0f791-9861-4f67-bc07-ac1a6ad33ee5.jpeg?h=368&w=240&dpr=2",
+        "https://sc04.alicdn.com/kf/H25cb0833e1c34549ac8b88f569ac424fA.jpg",
       hoverImage:
-        "https://snfproducts.pk/wp-content/uploads/2023/07/WhatsApp-Image-2023-08-07-at-4.23.30-PM-1.jpeg",
+        "https://bechlo.pk/cdn/shop/files/GrYfiDOgi3.jpg?v=1756971109&width=1214",
       originalPrice: 4500,
-      sizes: [36, 37, 38, 39, 40, 41],
+      sizes: [1],
     },
   ];
 
@@ -345,7 +346,7 @@ const WomenWedding = () => {
       <div className="pt-12 px-2 sm:px-3">
         <div className="text-center mb-6">
           <h2 className="text-sm sm:text-3xl lg:text-4xl font-normal mb-6">
-            Women Wedding
+            Bags & Clutches Wedding
           </h2>
         </div>
 
@@ -388,8 +389,10 @@ const WomenWedding = () => {
           </div>
         </div>
 
+        {/* ✅ Filter Overlay */}
         <Filter isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen} />
 
+        {/* ✅ Product Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pb-12">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -400,4 +403,4 @@ const WomenWedding = () => {
   );
 };
 
-export default WomenWedding;
+export default ClutchesWedding;
